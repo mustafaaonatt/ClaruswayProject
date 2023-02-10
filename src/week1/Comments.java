@@ -1,3 +1,5 @@
+package week1;
+
 public class Comments {
 //    This is the first type of comment start with //
 //     This is comment
