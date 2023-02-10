@@ -29,6 +29,23 @@ public class MyHomeWorkClass {
          * this is second line
          * this is third line
          */
+/*3-) Write the below sentences in single line, multi-line and JavaDoc format
+ Class Name: MyHomeworkClass
+ Method Name: main()
+ Developer: <Write your Name>
+ Date: November 23,2022
+ *
+ */
+        //Class Name: MyHomeworkClass
+        //Method Name: main() Developer: <Write your Name> Date: November 23,2022
+/**Class Name: MyHomeworkClass
+ Method Name: main()
+ Date: November 23,2022
+  */
+
+
+        }
+
 
     }
-}
+
