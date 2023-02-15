@@ -1,4 +1,4 @@
-package week1.Homework;
+package week1.HomeWork1;
 
 public class QuestionFour {
     // 4-)Create an new class with any name and copy below codes and correct the wrong comments

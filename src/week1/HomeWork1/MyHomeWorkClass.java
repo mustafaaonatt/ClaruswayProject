@@ -1,4 +1,4 @@
-package week1.Homework;
+package week1.HomeWork1;
 
 public class MyHomeWorkClass {
     /*1-) Follow the below steps :

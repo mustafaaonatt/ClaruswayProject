@@ -1,4 +1,4 @@
-package week1.Homework;
+package week1.HomeWork1;
 
 /**8-) Create an new class and main method with any name and copy below codes and correct the wrong comments
  Java program to illustrate frequently used
