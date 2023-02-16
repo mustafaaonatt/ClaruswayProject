@@ -2,7 +2,7 @@ package week2.HomeWork2;
 
 import java.util.Scanner;
 
-public class Three {
+public class BloodDonation {
     public static void main(String[] args) {
         /**
          * Assign age and weight,
