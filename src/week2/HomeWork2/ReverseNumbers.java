@@ -9,9 +9,19 @@ input: 45678 , Output: 87654
 public class ReverseNumbers {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Please enter 4 digits number: ");
-        int num = scan.nextInt();
+        System.out.println("Please enter the number: ");
+        int number = scan.nextInt();
+        if (number >= -9 && number <= 9 ) {
+            System.out.println("Single-digit number! Can not riverse rhe number!" + number);
+        }  else {
+            String stringNumber = String.valueOf(number);
+            int reverseNumber = 0;
+            for (int i = 1; i <= stringNumber.length(); i++) {
+                reverseNumber = number % 10 + (10 * reverseNumber);
+                number = number / 10;
 
-        int reverse;
+            }
+            System.out.println("Reverse number is: " + reverseNumber);
+        }
     }
 }

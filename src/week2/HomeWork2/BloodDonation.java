@@ -23,15 +23,14 @@ public class BloodDonation {
         weight = scan.nextInt();
 
         if (age >= 21) {
-            if( weight >= 90){
-            System.out.println("You can donate blood");
-        }else{
+            if (weight >= 90) {
+                System.out.println("You can donate blood");
+            } else {
                 System.out.println("You can not  donate blood (weight requirement not met).");
-            }
 
             }
 
-            }
 
-
+        }
     }
+}
