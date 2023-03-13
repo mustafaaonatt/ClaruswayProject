@@ -1,11 +1,11 @@
 package week5.HomeWork5;
 
 public class EncapsulationOrder {
-    String customerName;
-    int orderNumber;
-    String orders;
-    double orderPrice;
-    double changeMoney;
+   private String customerName;
+    private int orderNumber;
+    private String orders;
+    private double orderPrice;
+   private double changeMoney;
 
     public String getCustomerName() {
         return customerName;
