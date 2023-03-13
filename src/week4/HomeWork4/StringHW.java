@@ -1,5 +1,7 @@
 package week4.HomeWork4;
 
+import java.util.Arrays;
+
 public class StringHW {
     public static void main(String[] args) {
 //1.Write a Java program to get the character at the given index within the String.
@@ -45,12 +47,24 @@ public class StringHW {
 
         System.out.println(str5.concat(str6));
 
-        // 5. Write a Java program to compare a given string to the specified string buffer.
+        // 5. Write a Java program to compare a given string to the specified string buffer. (????)
+        // Comparing example.com and example.com: true
+        // Comparing Example.com and example.com: false
 
-        String str7 = "example.com";
-        String str8 = "Example.com";
+        String str7 = "Example.com";
+        StringBuffer str8 =new StringBuffer("example.com");
+        int result11 = str7.compareTo(String.valueOf(str8));
 
-     // 6. Write a Java program to check whether a given string ends with the contents of another string.
+        if(result11 == 0 ){
+            System.out.println("str7 equals to str8 ");
+
+        } else if (result11 < 0) {
+            System.out.println("str7 less than str8 ");
+        }else
+            System.out.println("str7 grater than str8");
+
+
+        // 6. Write a Java program to check whether a given string ends with the contents of another string.
 
         String str9 = "Python Exercises";
         String str10 = "Python Exercises";
@@ -76,26 +90,35 @@ public class StringHW {
 
         String str13 = "Mustafa";
         char[] chr1 = str13.toCharArray();
-        System.out.println(chr1.toString());
+        System.out.println(Arrays.toString(chr1));
 
 
        // 10.Write a Java program to get the index of all the characters of the alphabet.
 
-        String str14 = "Mustafa";
-        int y =str14.indexOf(0);
-        System.out.println(str14);
-         for ( int i = 0; i<str14.length(); i++){
-             System.out.print(i);
-         }
+         String str14 = "Mustafa";
+         int a =str14.indexOf("a",0);
+        System.out.println(" Index number of a = " + a);
+
+
+
+//        String str14 = "Mustafa";
+//        int y =str14.indexOf(0);
+//        System.out.println(str14);
+//         for ( int i = 0; i<str14.length(); i++){
+//             y = str14.indexOf(a)
+//             System.out.print(i);
+//         }
         System.out.println();
 
      //   11.Write a Java program to replace a specified character with another character.
 
         String str15 = "Java Programing language.";
         System.out.println(str15);
-         String str16 = str15.replace("Programing","Script and Python ");
+         String str16 = str15.replace("Programing language.","Script and Python");
         System.out.println(str16);
-
+        String str16a = str16.replaceAll("a","u");
+        System.out.println(str16a);
+          // New String: Java Script and Python
 
         // 12.Write a Java program to replace each substring
         // of a given string that matches the given regular expression with the given replacement.
