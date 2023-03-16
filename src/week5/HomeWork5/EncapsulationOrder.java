@@ -1,11 +1,18 @@
 package week5.HomeWork5;
 
+/** Encapsulation Practice class : Please create a class(EncapsulationOrder)
+ * and use the variables below for encapsulation practice class. Use the getter and setter methods
+ * class name : EncapsulationOrder
+ * variables : customerName, OrderNumber, Orders, OrderPrice, changeMoney
+ *
+ */
+
 public class EncapsulationOrder {
-   private String customerName;
+    private String customerName;
     private int orderNumber;
     private String orders;
     private double orderPrice;
-   private double changeMoney;
+    private double changeMoney;
 
     public String getCustomerName() {
         return customerName;
