@@ -1,6 +1,6 @@
 package week6.HomeWork6.Picture;
 
-import Photograph;
+
 
 public class DigitalPhotograph extends Photograph {
     private String camera;

@@ -1,8 +1,7 @@
 package week6.HomeWork6.Picture;
 
-import DigitalPhotograph;
-import Painting;
-import Photograph;
+
+
 
 public class App {
     public static void main(String[] args) {
