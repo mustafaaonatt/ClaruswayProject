@@ -1,6 +1,8 @@
-package week6.HomeWork6;
+package week6.HomeWork6.Picture;
 
-public class DigitalPhotograph extends Photograph{
+import Photograph;
+
+public class DigitalPhotograph extends Photograph {
     private String camera;
 
     public String getCamera() {

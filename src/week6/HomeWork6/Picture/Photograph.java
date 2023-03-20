@@ -1,4 +1,4 @@
-package week6.HomeWork6;
+package week6.HomeWork6.Picture;
 
 public class Photograph extends Picture {
     private String photographer;

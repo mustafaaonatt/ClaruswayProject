@@ -1,6 +1,6 @@
-package week6.HomeWork6;
+package week6.HomeWork6.Picture;
 
-public class Painting extends Picture{
+public class Painting extends Picture {
     private String owner;
 
     public String getOwner() {
