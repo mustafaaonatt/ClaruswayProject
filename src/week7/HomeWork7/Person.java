@@ -1,8 +1,8 @@
 package week7.HomeWork7;
 
 public class Person {
-    private String name;
-    private int age;
+    private String name = "Ali";
+    private int age = 32;
 
     public String getName() {
         return name;

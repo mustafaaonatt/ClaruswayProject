@@ -5,7 +5,10 @@ public class Main {
         Person prs = new Person("Mustafa", 29);
         Heroes heroes = new Heroes("Ahmet",28,"$$$$");
 
+        System.out.println(heroes.getPower());
+
+
         prs.Details();
-        heroes.Details();
+
     }
 }

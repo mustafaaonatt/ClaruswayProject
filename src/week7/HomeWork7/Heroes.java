@@ -2,7 +2,7 @@ package week7.HomeWork7;
 
 public class Heroes extends Person{
 
-    private String power;
+    private String power = "$$$$";
 
     public String getPower() {
         return power;
