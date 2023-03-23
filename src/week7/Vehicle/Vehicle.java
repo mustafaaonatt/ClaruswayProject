@@ -1,12 +1,12 @@
 package week7.Vehicle;
 
-public class Vehicle {
+public class Vehicle {// POJO CLASS
         private String brand;
         private String model;
         private int numOfWheels;
         private int numOfPassengers;
         private String color;
-/*
+
         public String getBrand() {
                 return brand;
         }
@@ -45,14 +45,17 @@ public class Vehicle {
 
         public void setColor(String color) {
                 this.color = color;
-        } */
+        }
 
-        public Vehicle(String brand, String model, int NOW, int NOP, String color) {
+       public Vehicle(String brand, String model, int NOW, int NOP, String color) {
                 this.brand = brand;
                 this.model = model;
                 this.numOfWheels = NOW;
                 this.numOfPassengers = NOP;
                 this.color = color;
+        }
+        public Vehicle(){
+
         }
 
         public String toString(){

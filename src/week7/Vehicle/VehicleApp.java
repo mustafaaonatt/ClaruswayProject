@@ -23,6 +23,10 @@ public class VehicleApp {
                 case 5:
                       listAll();
                       break;
+                case 8:
+                      removeVehicle();
+                      break;
+
             }
             for (Vehicle v : vehicles){
                 v.toString();
@@ -30,7 +34,28 @@ public class VehicleApp {
 
         }
     }
+    public static boolean removeVehicle(){
+        boolean flag = false;
+        System.out.print("Please enter brand...>");
+        String brand01 = scan.next();
+        Vehicle vch = new Vehicle();
 
+        for (Vehicle w :vehicles) {
+            if (w.getBrand().equals(brand01)){
+                System.out.println(vch.getBrand());
+                vehicles.remove(brand01);
+                flag = true;
+            }
+
+        }
+
+
+
+
+
+
+        return flag;
+    }
 
 
     public static int mainMenu(){
@@ -57,10 +82,9 @@ public class VehicleApp {
 
         System.out.print("Enter the model...> ");
         String model  = scan.next();
-
         System.out.print("Number of wheels...> ");
         int now = scan.nextInt();
-
+        // scan.next();
         System.out.print("Passenger cap...> ");
         int nop = scan.nextInt();
 
