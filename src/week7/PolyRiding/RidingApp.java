@@ -9,5 +9,11 @@ public class RidingApp {
                    But functionality of method changes based on the needs of child classes
     Gokhan --> Driver,Father, Photographer
      */
+        InputDevices dev01 = new InputDevices();
+        Keyboard dev02 = new Keyboard();
+        Microphone dev03 = new Microphone();
+        dev01.whatIdo();
+        dev02.whatIdo();
+        dev03.whatIdo();
     }
 }
