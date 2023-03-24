@@ -7,7 +7,18 @@ public class Vehicle {// POJO CLASS
         private int numOfPassengers;
         private String color;
 
-        public String getBrand() {
+        public String VIN;
+
+
+    public String getVIN() {
+        return VIN;
+    }
+
+    public void setVIN(String VIN) {
+        this.VIN = VIN;
+    }
+
+    public String getBrand() {
                 return brand;
         }
 
@@ -47,12 +58,13 @@ public class Vehicle {// POJO CLASS
                 this.color = color;
         }
 
-       public Vehicle(String brand, String model, int NOW, int NOP, String color) {
+       public Vehicle(String brand, String model, int NOW, int NOP, String color,String VIN) {
                 this.brand = brand;
                 this.model = model;
                 this.numOfWheels = NOW;
                 this.numOfPassengers = NOP;
                 this.color = color;
+                this.VIN = VIN;
         }
         public Vehicle(){
 

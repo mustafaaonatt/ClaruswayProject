@@ -1,12 +1,14 @@
 package week7.Vehicle;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 public class VehicleApp {
 
     static  Scanner scan = new Scanner(System.in);
-    static ArrayList<Vehicle> vehicles = new ArrayList<>();
+    static List<Vehicle> vehicles = new ArrayList<>();
     public static void main(String[] args) {
 
         int option = -1;
@@ -24,7 +26,7 @@ public class VehicleApp {
                       listAll();
                       break;
                 case 8:
-                      removeVehicle();
+                    System.out.println(" Removed "+removeVehicle());
                       break;
 
             }
@@ -36,22 +38,27 @@ public class VehicleApp {
     }
     public static boolean removeVehicle(){
         boolean flag = false;
-        System.out.print("Please enter brand...>");
-        String brand01 = scan.next();
-        Vehicle vch = new Vehicle();
+        System.out.print("Please enter VIN to remove it ...>");
+        String vinRemove = scan.next();
 
-        for (Vehicle w :vehicles) {
-            if (w.getBrand().equals(brand01)){
-                System.out.println(vch.getBrand());
-                vehicles.remove(brand01);
+
+        for(Iterator<Vehicle> itr = vehicles.iterator(); itr.hasNext();){
+            Vehicle vehicle = itr.next();
+            if(vehicle.VIN.equals(vinRemove)){
+                itr.remove();
                 flag = true;
+
             }
 
+
+       /* for (Vehicle v :vehicles) {
+            if (v.VIN.equals(vinRemove)){
+                System.out.println(v.VIN);
+                vehicles.remove(v);
+                flag = true;
+            } */
+
         }
-
-
-
-
 
 
         return flag;
@@ -101,6 +108,7 @@ public class VehicleApp {
 
         Car temp = new Car(brand,model,now,nop,color,electric,VIN);
         vehicles.add(temp);
+        // linksList.add(link.attr("abs:href").toString());
 
     }
     public static  void addTruck(){
