@@ -30,6 +30,9 @@ public class VehicleApp {
                 case 3:
                     addPlane();
                     break;
+                case 4:
+                    addBoat();
+                     break;
                 case 5:
                       listAll();
                       break;
@@ -192,6 +195,38 @@ public class VehicleApp {
 
 
     }
+    public  static void addBoat(){
+        System.out.print("Enter the brand....> ");
+        String brand = scan.next();
+
+        System.out.print("Enter the model...> ");
+        String model  = scan.next();
+
+        System.out.print("Number of wheels...> ");
+        int now = scan.nextInt();
+
+        System.out.print("Passenger cap...> ");
+        int nop = scan.nextInt();
+
+        System.out.print("Enter the color...> ");
+        String color = scan.next();
+
+        System.out.print("Enter the VIN...> ");
+        String VIN = scan.next();
+
+        System.out.println("Enter the Boat name...>");
+        String name = scan.next();
+
+        System.out.println("Enter the length of the boat ");
+        Float length = scan.nextFloat();
+
+        Vehicle temp = new Boat(brand,model,now,nop,color,VIN,name,length);
+
+        vehicles.add(temp);
+
+    }
+
+
 
 
 
