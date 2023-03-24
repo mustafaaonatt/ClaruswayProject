@@ -72,6 +72,7 @@ public class Vehicle {// POJO CLASS
 
         public String toString(){
                  return brand+" "+model+"( "+color+" ) has "+
-                         numOfPassengers+" passenger capacity. It has " +numOfWheels+ " wheels ";
+                         numOfPassengers+" passenger capacity. It has " +numOfWheels+ " wheels "
+                         + " The VIN number is. "+(VIN);
         }
 }

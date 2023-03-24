@@ -32,7 +32,7 @@ public class Car extends  Vehicle{
     public String toString(){
         String temp = super.toString();
         temp += "This is " + (isElectric ? " electric " : " gasoline ") +
-                " car. It's VIN number is." ;
+                " car." ;
         return temp;
     }
 }

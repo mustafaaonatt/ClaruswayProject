@@ -9,6 +9,11 @@ public class VehicleApp {
 
     static  Scanner scan = new Scanner(System.in);
     static List<Vehicle> vehicles = new ArrayList<>();
+
+    static {
+        Vehicle vehicle = new Vehicle("Tesla","model3",4,5,"red","1234");
+        vehicles.add(vehicle);
+    }
     public static void main(String[] args) {
 
         int option = -1;
@@ -26,7 +31,7 @@ public class VehicleApp {
                       listAll();
                       break;
                 case 8:
-                    System.out.println(" Removed "+removeVehicle());
+                      removeVehicle();
                       break;
 
             }
@@ -38,17 +43,26 @@ public class VehicleApp {
     }
     public static boolean removeVehicle(){
         boolean flag = false;
-        System.out.print("Please enter VIN to remove it ...>");
+        for (int i = 0; i < vehicles.size(); i++) {
+            System.out.println(vehicles.get(i).getVIN());
+        }
+        System.out.print("Please enter VIN to remove it ...> ");
         String vinRemove = scan.next();
 
-
-        for(Iterator<Vehicle> itr = vehicles.iterator(); itr.hasNext();){
-            Vehicle vehicle = itr.next();
-            if(vehicle.VIN.equals(vinRemove)){
-                itr.remove();
+        for (int i = 0; i <vehicles.size() ; i++) {
+            System.out.println(vehicles.get(i).VIN.equals(vinRemove));
+            if (vehicles.get(i).getVIN().equals(vinRemove)){
+                System.out.println(vehicles.get(i));
+                System.out.println("This "+ vehicles.get(i).getBrand() + vehicles.get(i).getModel()+" car was deleted. ");
+                vehicles.remove(i);
                 flag = true;
-
             }
+
+        }
+        return flag;
+
+
+
 
 
        /* for (Vehicle v :vehicles) {
@@ -61,8 +75,8 @@ public class VehicleApp {
         }
 
 
-        return flag;
-    }
+
+
 
 
     public static int mainMenu(){
@@ -106,9 +120,9 @@ public class VehicleApp {
         String VIN = scan.next();
 
 
-        Car temp = new Car(brand,model,now,nop,color,electric,VIN);
+        Vehicle temp = new Vehicle(brand,model,now,nop,color,VIN);
         vehicles.add(temp);
-        // linksList.add(link.attr("abs:href").toString());
+
 
     }
     public static  void addTruck(){
@@ -139,7 +153,7 @@ public class VehicleApp {
         int load = scan.nextInt();
 
 
-        Truck temp = new Truck(brand,model,now,nop,color,electric,VIN,load);
+        Vehicle temp = new Vehicle (brand,model,now,nop,color,VIN);
         vehicles.add(temp);
 
     }
