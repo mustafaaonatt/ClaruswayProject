@@ -27,6 +27,9 @@ public class VehicleApp {
                 case 2:
                       addTruck();
                       break;
+                case 3:
+                    addPlane();
+                    break;
                 case 5:
                       listAll();
                       break;
@@ -157,6 +160,44 @@ public class VehicleApp {
         vehicles.add(temp);
 
     }
+    public static void addPlane(){
+        System.out.print("Enter the brand....> ");
+        String brand = scan.next();
+
+        System.out.print("Enter the model...> ");
+        String model  = scan.next();
+
+        System.out.print("Number of wheels...> ");
+        int now = scan.nextInt();
+
+        System.out.print("Passenger cap...> ");
+        int nop = scan.nextInt();
+
+        System.out.print("Enter the color...> ");
+        String color = scan.next();
+
+        System.out.print("Enter the VIN...> ");
+        String VIN = scan.next();
+
+        System.out.print("Enter plane engine type...> ");
+        String engineType = scan.next();
+
+        System.out.print("Enter number of Wings...> ");
+        int wingsNumber = scan.nextInt();
+
+
+        Vehicle temp = new Plane(brand,model,now,nop,color,VIN,engineType,wingsNumber);
+
+        vehicles.add(temp);
+
+
+    }
+
+
+
+
+
+
 
     public static void listAll(){
         int counter = 1;

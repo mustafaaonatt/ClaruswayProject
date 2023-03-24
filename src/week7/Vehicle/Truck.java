@@ -19,7 +19,6 @@ public class Truck extends Car {
     public String toString(){
         String temp = super.toString();
         String temp2 = temp.replace("car","truck");
-        System.out.println(temp2);
         return temp2;
     }
 }
