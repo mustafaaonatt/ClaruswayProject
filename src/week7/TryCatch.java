@@ -5,13 +5,13 @@ import java.io.IOException;
 
 public class TryCatch {
     public static void main(String[] args) {
-
-
     FileInputStream file = null;
     try{
         file = new FileInputStream("c : textfile.txt");
-    }catch(IOException e){
+    }catch(IOException e){ // Catch block can run ,if there is an exception.
         System.out.println("The specified file is not present at the given path."+e);
+    }finally { // Finally block runs everytime
+        System.out.println("Finally bloke runs everytime");
     }
 }
 }

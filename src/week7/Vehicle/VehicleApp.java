@@ -240,5 +240,9 @@ public class VehicleApp {
             System.out.println((counter++) + "->" + v.toString());
         }
     }
+
+    public static void listByType(){
+
+    }
 }
 
