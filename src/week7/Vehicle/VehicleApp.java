@@ -65,6 +65,11 @@ public class VehicleApp {
             }
 
         }
+        if(!flag) { // I added if statement to check whether VIN number is in the database.
+            System.out.println("Error 404: the item is not in the data base.");}
+
+
+
         return flag;
 
 
