@@ -28,6 +28,6 @@ public class Sonic extends  Game{
 
 
     public void B() {
-        System.out.println("Sonic looks up");
+        System.out.println("Sonic jumps");
     }
 }

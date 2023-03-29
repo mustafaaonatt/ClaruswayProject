@@ -58,26 +58,51 @@ public class GameController {
             if (isGameSelect) {
                 input = gameMenu();
                 if (input == 'D') {
-                    if (gameMenuOption == 3) {
+                    if (gameMenuOption != 3) {
                         gameMenuOption++;
                     }
                 } else if (input == 'U') {
                     if (gameMenuOption != 1) {
                         gameMenuOption--;
-
-                    } else if (input == 'S') {
-                        isMainMenu = true;
-                        isGameSelect = false;
-                        selectedGame = gameMenuOption - 1;
-                        gameMenuOption = 1;
-
                     }
+                }else if (input == 'S') {
+                    isMainMenu = true;
+                    isGameSelect = false;
+                    selectedGame = gameMenuOption - 1;
+                    gameMenuOption = 1;
                 }
-                if (isGamePlay) {
-                    // TODO
-                }
-                System.out.println("\n\n");
             }
+            if (isGamePlay) {
+                input = gamePlay();
+                switch (input){
+                    case 'U':
+                        games.get(selectedGame).up();
+                        break;
+                    case 'D':
+                        games.get(selectedGame).down();
+                        break;
+                    case 'R':
+                        games.get(selectedGame).right();
+                        break;
+                    case 'L':
+                        games.get(selectedGame).left();
+                        break;
+                    case 'A':
+                        games.get(selectedGame).A();
+                        break;
+                    case 'B':
+                        games.get(selectedGame).B();
+                        break;
+                    case 'S':
+                        isGamePlay = false;
+                        isMainMenu = true;
+                        break;
+
+
+
+                }
+            }
+            System.out.println("\n\n");
         }
         while (input != 'P') ;
     }
@@ -103,13 +128,13 @@ public class GameController {
 
 
     public static char gameMenu(){
-        System.out.println("--------MAIN MENU--------");
+        System.out.println("--------GAME MENU--------");
         System.out.println("-SELECTED GAME : "+ (selectedGame == 0 ? "SONIC" : (selectedGame == 1 ? "MARIO" : "CONTRA")) + " -");
-        if (mainMenuOption == 1){
+        if (gameMenuOption == 1){
             System.out.println("\t -> SONIC <- ");
             System.out.println("MARIO");
             System.out.println("CONTRA");
-        } else if (mainMenuOption == 2) {
+        } else if (gameMenuOption == 2) {
             System.out.println("SONIC");
             System.out.println("\t -> MARIO <-");
             System.out.println("CONTRA");
@@ -124,5 +149,15 @@ public class GameController {
 
         return scan.next().charAt(0);
 
+    }
+
+    public static char gamePlay(){
+        System.out.println("--------GAME PLAY--------");
+        System.out.println("-SELECTED GAME : "+ (selectedGame == 0 ? "SONIC" : (selectedGame == 1 ? "MARIO" : "CONTRA")) + " -");
+        System.out.println("---(D)own---(U)p---Button(A)----");
+        System.out.println("---(R)ight---(L)eft---Button(B)----");
+        System.out.println("---(S)witch to Main Menu----");
+
+        return scan.next().charAt(0);
     }
 }
