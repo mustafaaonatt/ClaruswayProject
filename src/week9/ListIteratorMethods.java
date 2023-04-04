@@ -7,6 +7,7 @@ import java.util.ListIterator;
 public class ListIteratorMethods {
     public static void main(String[] args) {
         List<String> list = new LinkedList<String>();
+
         list.add("Apple");
         list.add("Banana");
         list.add("Cherry");
@@ -24,5 +25,6 @@ public class ListIteratorMethods {
         list.add("B");
         list.add("C");
         System.out.println("After adding: " + list);
+
     }
 }
