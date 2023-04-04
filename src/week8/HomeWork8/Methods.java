@@ -10,33 +10,35 @@ public class Methods {
         Methods obj = new Methods();
         obj.createEmp();
     }
-    public  void createEmp() {//String fName, int kids, String education
+    public  void createEmp(){//String fName, int kids, String education
 
-        String fname = null;
-        int kids = 0;
-        String education = null;
-        int x =1;
-        do {
+
+            String fname = null;
             try {
                 System.out.print("Please enter your full name ");
                 fname = input.nextLine();
+            } catch (Exception e) {
+                System.out.println("You cant do that");
+            }
+            int kids = 0;
+            try {
                 System.out.print("How many kids dou you have ? ");
                 kids = input.nextInt();
+            } catch (Exception e) {
+                System.out.println("You cant do that");
+            }
+            String education = null;
+            try {
                 System.out.print("Please enter your last degree ? ");
                 education = input.next();
-                x=2;
             } catch (Exception e) {
-                System.out.println("Please check your information and try again ");
+                System.out.println("You cant do that");
             }
-        }while (x==1);
 
 
-        EmployeePojo Emp01 = new EmployeePojo(fname, kids, education);
+        EmployeePojo Emp01 = new EmployeePojo(fname,kids,education);
         Emp01.setEmpID(1000);
         Database.employeelist.add(Emp01);
-        for (EmployeePojo e : Database.employeelist) {
-            System.out.print(e);
-        }
 
     }
 
