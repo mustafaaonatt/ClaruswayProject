@@ -1,5 +1,6 @@
 package week9.ListPractice;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -33,16 +34,30 @@ public class Application {
         System.out.println("----A---AF--AL---|--R---RF---RL---|---SW---|---L---  ");
         input = scan.next();
         if (input.compareTo("A") == 0){
-            System.out.println("Please enter an item >");
+            System.out.print("Please enter an item >");
             input = scan.next();
-            listHolder.get(selectedList).A(input);
+            if(listHolder.get(selectedList).M(input)){
+
+            }else {
+                listHolder.get(selectedList).A(input);
+            }
+
         }else if (input.compareTo("L") == 0){
             selectedList = -1;
             inMainMenu = false;
             inListsMenu = true;
             theListsMenu = false;
+        } else if (input.compareTo("AF") == 0) {
+            System.out.print("Please enter an item for first place >");
+            input = scan.next();
+            if(listHolder.get(selectedList).C(input)){
+
+            }else {
+                listHolder.get(selectedList).AF(input);
+            }
         }
     }
+
 
     public static void mainMenuOptions() {
         System.out.println("\n\n\n------------MAIN MENU-----------------");

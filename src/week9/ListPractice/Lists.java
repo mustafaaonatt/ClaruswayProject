@@ -53,6 +53,27 @@ public class Lists {
             System.out.println((counter++) + ". " + str);
         }
     }
+    public boolean C(String in){
+        boolean flag = true;
+        if (list.contains(in)){
+            if (list.indexOf(in) == 0){
+                System.out.println("The item already in first place. ");
+            }
+        }else{
+            flag =false;
+        }
+        return flag;
+    }
+
+    public boolean M(String in){
+        boolean flag = true;
+        if(list.contains(in)){
+            System.out.println("The item already in your list. ");
+        }else {
+            flag = false;
+        }
+        return flag;
+    }
 
 
 }
