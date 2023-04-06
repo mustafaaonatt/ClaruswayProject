@@ -48,7 +48,7 @@ public class Application {
         System.out.println("\n\n\n------------MAIN MENU-----------------");
         System.out.println("1. Create list");
         System.out.println("2. Lists Menu");
-        System.out.println("---P---------------------------------------");
+        System.out.print("---P---------------------------------------");
         input = scan.next();
 
         if (input.compareTo("1") == 0) {
@@ -64,9 +64,9 @@ public class Application {
         System.out.println("\n\n\n-------------All Lists-----------------");
         int counter = 1;
         for (Lists lst : listHolder) {
-            System.out.println((counter++) + ". " + lst.getLname()+"("+ lst.S()+" items ) ");
+            System.out.println((counter++) + ". " + lst.getlName()+"("+ lst.S()+" items ) ");
         }
-        System.out.println("------M--------");
+        System.out.print("------M--------");
 
         input = scan.next();
 
@@ -74,8 +74,9 @@ public class Application {
             inMainMenu = true;
             inListsMenu = false;
         } else {
-            selectedList = Integer.parseInt(input)-1;
+            selectedList = Integer.parseInt(input);
             if (selectedList > 0){
+                selectedList--;
                 inMainMenu = false;
                 inListsMenu = false;
                 theListsMenu = true;

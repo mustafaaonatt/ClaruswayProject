@@ -3,16 +3,16 @@ package week9.ListPractice;
 import java.util.LinkedList;
 
 public class Lists {
-    private String lname;
+    private String lName;
     private LinkedList<String> list;
 
-    public Lists(String lname) {
-        this.lname = lname;
+    public Lists(String lName) {
+        this.lName = lName;
         this.list = new LinkedList<String>();
     }
 
-    public String getLname() {
-        return lname;
+    public String getlName() {
+        return lName;
     }
 
     public void A(String in){
@@ -48,7 +48,7 @@ public class Lists {
     }
     public void D(){
         int counter = 1;
-        System.out.println("\n\n\n-------------- " + this.lname+ " ------------------" );
+        System.out.println("\n\n\n-------------- " + this.lName+ " ------------------" );
         for (String str : list){
             System.out.println((counter++) + ". " + str);
         }
