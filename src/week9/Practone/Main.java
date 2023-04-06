@@ -23,6 +23,7 @@ public class Main {
         System.out.println(list);
         */
 
+
        String removed = list.remove();
 
        list.add(3,"Corn");

@@ -14,6 +14,23 @@ public class MethodsInAction {
         names[1] = "Mustafa";
         names[2] = "Kawsar";
         */
+
+        Object newList = ((LinkedList<String>)list).clone();
+
+        System.out.println("The List : ");
+        for (String str : list){
+            System.out.println(str);
+        }
+
+        System.out.println("");
+        String check = "Bye";
+        if(list.contains(check)){
+            System.out.println(check + " is available at the index " + list.indexOf(check));
+        }else {
+            System.out.println(check + " is not available at the index ");
+        }
+        System.out.println("");
+
         ArrayList<String> names = new ArrayList<>();
         names.add("Vitalii");
         names.add("Mustafa");
