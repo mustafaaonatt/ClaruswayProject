@@ -32,6 +32,9 @@ public class HashSetExample {
 
         //Displaying Hashset elements
         System.out.println(hashSet);
+        for (String v : hashSet){
+            System.out.println(v);
+        }
 
     }
 }
