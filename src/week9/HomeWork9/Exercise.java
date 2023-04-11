@@ -38,6 +38,7 @@ public class Exercise {
 
         list.addFirst("Watermelon");
 
+
         list.addLast("Peach");
 
         Iterator<String> iterator3 = list.iterator();
