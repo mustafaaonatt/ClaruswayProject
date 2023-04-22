@@ -15,22 +15,19 @@ public class IOApplication {
     private static HashMap<String,String> allUsers = new HashMap<>();
     public static void main(String[] args) {
         updateUserSystem();
-
-       // User test1 = new User("test1", "test", "one", 123123, false);
-      //  User test2 = new User("newManager", "test", "two", 456456, true);
-      //  User test3 = new User("test3", "test", "one", 123456, false);
-     //   User test4 = new User("test4", "test", "one", 555333, true);
-     //   User test5 = new User("test5", "test", "one", 777777, false);
+        User test1 = new User("MustafaaOnatt","Mustafa","Onat",123,false);
+        User test2 = new User("PonomarevVitaly","Vitaly","Ponomarev",456,true);
+        User test3 = new User("AhmetBurakBilir","Ahmet","Bilir", 789,false);
+        User test4 = new User("HumeyraKoc","Humeyra", "Koc", 012,true);
          while (input.compareTo("P")!=0){
              if(isMainMenu){
                  MainMenu();
-
              } else if (isCreateMenu) {
                 createMenu();
              } else if (isLoginMenu) {
                  System.out.println("Please login for main Menu");
              } else if (isProfileMenu) {
-                 System.out.println("Please login for main Menu");
+                 System.out.println("Please login for Profile Menu");
              }
          }
 
@@ -44,9 +41,9 @@ public class IOApplication {
         for (File file : files.listFiles()){
             String filename = file.getName();
             if(filename.contains(".txt")){
-                getAllUsers(filename);
+              //  getAllUsers(filename);
+                filename = file.getName();
                 int found = findTheNumber(filename);
-                System.out.println(found);
                 if(filename.substring(0,2).compareTo("M_") == 0);{
                     if(managerCounter<found){
                         managerCounter = found;
@@ -55,18 +52,13 @@ public class IOApplication {
                 if (filename.substring(0,2).compareTo("U_") == 0){
                     if (userCounter< found){
                         userCounter =found;
-
                     }
                 }
             }
-
-
-
         }
         User.setManagerId(managerCounter);
         User.setUserID(userCounter);
-
-
+        System.out.println(allUsers);
     }
     public static int findTheNumber(String fileName){
         int firstUS = fileName.indexOf("_");

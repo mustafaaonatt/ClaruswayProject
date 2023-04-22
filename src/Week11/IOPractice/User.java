@@ -42,25 +42,25 @@ public class User {
 
         File files = new File(location);
 
-        for (File file : files.listFiles()){
+        for (File file : files.listFiles()) {
             String filename = file.getName();
-            if(filename.toUpperCase().contains("_"+uName.toUpperCase()+".TXT"));{
+            if (filename.toUpperCase().contains("_" + uName.toUpperCase() + ".TXT")){
                 isExists = true;
                 break;
             }
         }
-        if(isExists){
+        if (isExists) {
             System.out.println("!!! This username is already present please change the user name ");
+        } else {
+            this.uName = uName;
+            this.fName = fName;
+            this.lName = lName;
+            this.pass = pass;
+            this.isManager = isManager;
+            this.numMist = 0;
+            System.out.println("\t User account was generated. ");
+            userToFile();
         }
-
-        this.uName = uName;
-        this.fName = fName;
-        this.lName = lName;
-        this.pass = pass;
-        this.isManager = isManager;
-        this.numMist = 0;
-        System.out.println("\t User account was generated. ");
-        userToFile();
     }
 
     private void userToFile(){
@@ -93,8 +93,5 @@ public class User {
         }catch (IOException e){
             System.out.println("Please reach help desk about File was not created error");
         }
-
-
-
     }
 }
