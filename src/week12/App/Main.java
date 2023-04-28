@@ -49,7 +49,7 @@ public class Main {
         System.out.println("(C)ourses");
         System.out.println("(T)aken Courses");
         System.out.println("(P)ower off");
-        System.out.println("-------------------------------------------------------------------------->  ");
+        System.out.print("----------------------------------------------------------------------------->  ");
         input = scan.next().toUpperCase().substring(0,1);
         if (input.compareTo("S") == 0){
             mainMenu = false;
@@ -95,7 +95,7 @@ public class Main {
             Student std = dbs.theStd(id);
             if (std != null){
                 System.out.println("\n\nSelect one detail to update;");
-                System.out.println("1.First Name -> " + std.getfName());
+                System.out.println("1. First Name -> " + std.getfName());
                 System.out.println("2. Last Name -> " + std.getlName());
                 System.out.println("3. Gender -> " + std.getGender());
                 System.out.println("4. Date of birth -> " + std.getDob());

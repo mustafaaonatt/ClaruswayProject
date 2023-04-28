@@ -49,7 +49,7 @@ public class DatabaseService {
               if(check > 0){
                   System.out.println("Selected student removed from the system");
               }else {
-                  System.out.println("Selected student c");
+                  System.out.println("Selected student could not be removed from the system. Please try again.");
               }
         }
     }
