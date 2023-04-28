@@ -1,5 +1,10 @@
 package week12.App;
 
+import model.Student;
+import service.DatabaseService;
+
+import java.sql.Date;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
@@ -14,11 +19,15 @@ public class Main {
     private static boolean islist = false;
     private static boolean isUpdate = false;
     private static boolean isDelete = false;
+    private  static DatabaseService dbs = new DatabaseService();
 
     public static void main(String[] args) {
-       while (input.compareTo("P") != 0){
+        try {
+
+
+       while (input.compareTo("P") != 0) {
            System.out.println("\n\n");
-           if (mainMenu){
+           if (mainMenu) {
                displayMainMenu();
            } else if (stdMenu) {
                displayStdMenu();
@@ -27,8 +36,10 @@ public class Main {
            } else if (tcMenu) {
                displayTCMenu();
            }
-
        }
+       }catch (SQLException e){
+            System.out.println("We have DB issue, please reach to help desk");
+        }
     }
 
     private static void displayMainMenu(){
@@ -51,7 +62,7 @@ public class Main {
             tcMenu = true;
         }
     }
-    private static void displayStdMenu(){
+    private static void displayStdMenu() throws SQLException {
         System.out.println("--------------------------EDUCATION APPLICATION------------------------------");
         System.out.println("--------------------------STUDENT MENU---------------------------------------");
         System.out.println("(A)dd new student");
@@ -63,13 +74,47 @@ public class Main {
         System.out.print("-------------------------------------------------------------------------->  ");
         input = scan.next().toUpperCase().substring(0,1);
         if (input.compareTo("A") == 0){
-            System.out.println("Here we will add new student");
+            System.out.println("\n\n-------------------------- ADD A NEW STUDENT ________________________________");
+            System.out.print("First Name : ");
+            String fName = scan.next().trim().toUpperCase();
+            System.out.print("Last Name : ");
+            String lName = scan.next().trim().toUpperCase();
+            System.out.print("Gender (F/M) : ");
+            String gender = scan.next().trim().toUpperCase();
+            System.out.print("Date of Birth (yyyy-mm-dd) : ");
+            String dob = scan.next().trim();
+           dbs.addStd(new Student(fName, lName, gender, Date.valueOf(dob)));
         } else if (input.compareTo("L") == 0) {
-            System.out.println("Here we will Display the list of students ");
+            System.out.println("\n\n--------------------------STUDENT LIST---------------------------------------");
+            dbs.allStdList();
         } else if (input.compareTo("U") == 0) {
-            System.out.println("Here we will update the list of students ");
+            System.out.println("\n\n--------------------------STUDENT LIST---------------------------------------");
+            dbs.allStdList();
+            System.out.print("Enter Student ID > ");
+            int id = scan.nextInt();
+            Student std = dbs.theStd(id);
+            if (std != null){
+                System.out.println("\n\nSelect one detail to update;");
+                System.out.println("1.First Name -> " + std.getfName());
+                System.out.println("2. Last Name -> " + std.getlName());
+                System.out.println("3. Gender -> " + std.getGender());
+                System.out.println("4. Date of birth -> " + std.getDob());
+                System.out.println("--------------------------------------");
+                int detail = scan.nextInt();
+                dbs.updateStd(id, detail);
+            }
         } else if (input.compareTo("D") == 0) {
-            System.out.println("Here we will delete the student ");
+            System.out.println("\n\n--------------------------STUDENT LIST---------------------------------------");
+            dbs.allStdList();
+            System.out.print("Enter Student ID > ");
+            int id = scan.nextInt();
+            System.out.print("Please type \"DeleTe\" to validate the action > ");
+            String confirm = scan.next();
+            if (id > 0 && confirm.compareTo("DeleTe") == 0 ){
+                dbs.deleteStd(id);
+            }else {
+                System.out.println("Delete validation failed...");
+            }
         } else if (input.compareTo("M") ==  0) {
             stdMenu = false;
             mainMenu = true;
